@@ -15,6 +15,7 @@ class YaUploader:
         }, headers=self.headers)
         upload_url = r.json()['href']  # Получаем ссылку
         pprint(upload_url)
+
         # 2-й запрос - загрузка файла на диск по полной ссылке
         with open(file_path, 'rb') as f:
             data = f.read()
@@ -26,6 +27,6 @@ class YaUploader:
 if __name__ == '__main__':
     # Получить путь к загружаемому файлу и токен от пользователя
     path_to_file = 'bears.jpg'
-    token = 'AQAAAAAUYylMAADLWxlilvRzp0IouUMsy7Bw6IM'
+    token = ''
     uploader = YaUploader(token)
     result = uploader.upload(path_to_file)
